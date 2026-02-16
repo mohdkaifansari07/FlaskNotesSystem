@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Welcome {{ user }}</h2>
+
+<form action="{{ url_for('search_notes') }}" method="get" class="d-flex w-50">
+    <input type="text" name="q" class="form-control me-2" placeholder="Search notes..." required>
+    <button class="btn btn-light" type="submit">Search</button>
+</form>
+
+
+<a href="/logout">Logout</a>
+</body>
+</html>
+
+
+
+

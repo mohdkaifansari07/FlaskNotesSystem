@@ -1,0 +1,17 @@
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    firstname TEXT NOT NULL,
+    lastname TEXT,
+    username TEXT UNIQUE NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE notes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);

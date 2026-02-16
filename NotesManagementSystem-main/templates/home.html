@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Home | NotesMS{% endblock %}
+
+{% block content %}
+<div class="home-page">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-5 text-center">
+
+          <h1 class="fw-bold text-primary mb-3">
+            Welcome to Notes Management System
+          </h1>
+
+          <p class="lead text-muted">
+            A secure, simple, and efficient platform to manage your personal notes anytime, anywhere.
+          </p>
+
+          <hr class="my-4">
+
+          <div class="row g-4 mt-2">
+
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="fw-bold">🔐 Secure Access</h5>
+                  <p class="text-muted small">
+                    User authentication ensures your notes remain private and protected.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="fw-bold">📝 Easy Note Management</h5>
+                  <p class="text-muted small">
+                    Create, edit, and delete notes effortlessly with a clean interface.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="fw-bold">⚡ Fast & Responsive</h5>
+                  <p class="text-muted small">
+                    Built using Flask, MySQL, and Bootstrap for speed and responsiveness.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-4">
+            <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg px-4">
+              Get Started
+            
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

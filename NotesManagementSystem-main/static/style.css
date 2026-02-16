@@ -1,0 +1,453 @@
+/* ==================================================
+   GLOBAL RESET
+   ================================================== */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ==================================================
+   THEME VARIABLES
+   ================================================== */
+
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --card: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #ffffff;
+  --card: #1e1e1e;
+}
+
+/* ==================================================
+   FULL PAGE BACKGROUND (HOME / AUTH / PUBLIC)
+   ================================================== */
+/* 
+.page-wrapper {
+  min-height: calc(100vh - 56px - 72px);
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("./img.png") center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 15px 80px;
+}
+
+/* After login – optional different image */
+/* .logged-in .page-wrapper {
+  background:
+    linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+    url("./notes-bg.png") center / cover no-repeat;
+} */ 
+/* ==================================================
+   UNIVERSAL BACKGROUND (ALL PAGES)
+   ================================================== */
+
+.page-wrapper {
+  min-height: calc(100vh - 56px - 72px);
+
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("https://wallpapers.com/images/featured/library-06bevz1z3e3tya3r.jpg") center center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 15px;
+}
+
+
+
+
+/* ==================================================
+   CONTAINER WIDTH (CORPORATE LOOK)
+   ================================================== */
+
+.page-wrapper .container {
+  max-width: 1140px;
+}
+
+/* ==================================================
+   CARD STYLES (ALL PAGES)
+   ================================================== */
+
+.card,
+.auth-card,
+.content-card {
+  background-color: var(--card);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  margin: auto;
+}
+
+/* Auth card */
+.auth-card {
+  max-width: 420px;
+  width: 100%;
+}
+/* Compact auth forms (reduces height) */
+.auth-card .mb-3 {
+  margin-bottom: 10px !important;
+}
+
+.auth-card input {
+  padding: 8px 12px;
+}
+
+
+/* ==================================================
+   TEXT & FORM FIXES
+   ================================================== */
+
+
+/* Reduce vertical gaps in auth forms */
+.auth-card .mb-3 {
+  margin-bottom: 12px !important;
+}
+
+/* Tighten labels */
+.auth-card label {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--text);
+}
+
+label,
+.form-label {
+  color: var(--text);
+}
+
+.form-control {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+[data-theme="dark"] .form-control {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+}
+
+.text-muted {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+[data-theme="light"] .text-muted {
+  color: #6c757d !important;
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+footer strong {
+  color: #d83737;
+}
+
+/* ==================================================
+   RESPONSIVE (ALLOW SCROLL ON MOBILE)
+   ================================================== */
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    min-height: auto;
+    padding: 60px 15px;
+  }
+}
+.auth-card {
+  margin-top: 20px;
+}
+
+footer {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* Move auth card slightly upward (desktop only) */
+.page-wrapper .auth-card {
+  transform: translateY(-40px);
+}
+
+@media (max-width: 768px) {
+  .page-wrapper .auth-card {
+    transform: none;
+  }
+}
+
+
+.auth-card {
+  max-width: 380px;   /* was ~420 */
+  width: 100%;
+  padding: 24px;     /* was 30 */
+}
+
+
+.auth-card input.form-control {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+}
+
+.auth-card .mb-3 {
+  margin-bottom: 8px !important;
+}
+
+
+.auth-card h2,
+.auth-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+}
+
+
+/* Fix cursor visibility in dark mode */
+[data-theme="dark"] .form-control {
+  caret-color: #ffffff; /* cursor color */
+}
+
+
+[data-theme="dark"] .form-control::selection {
+  background: #619cf5;
+  color: #ffffff;
+}
+
+
+
+/* =========================
+   HOME PAGE CARD REFINEMENT
+   ========================= */
+
+/* Reduce main home card padding slightly */
+.home-page > .row > .col-lg-10 > .card .card-body {
+  padding: 3rem !important; /* was p-5 */
+}
+
+/* Feature cards (3 small cards) */
+.home-page .row .card.h-100 {
+  padding: 0;
+}
+
+/* Feature card body size */
+.home-page .row .card.h-100 .card-body {
+  padding: 18px;
+}
+
+/* Feature card title */
+.home-page .row .card h5 {
+  font-size: 1rem;
+}
+
+/* Feature card text */
+.home-page .row .card p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+
+
+
+
+/* Dark mode inputs */
+[data-theme="dark"] .form-control {
+  background-color: #5c5959;  /* dark background */
+  color: #ffffff;             /* text color */
+  border: 1px solid #7a8a9b;
+  caret-color: #e7cccc;       /* cursor color */
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #aaaaaa;             /* placeholder color */
+}
+
+[data-theme="dark"] .form-control:focus {
+  color: #ffffff;             /* ensure typing text is visible */
+  background-color: #1e1e1e; 
+  border-color: #888;         /* highlight border */
+}
+
+
+
+
+/* Search bar alignment polish */
+#noteSearch {
+  height: 38px;
+}
+
+
+/* ================= FLASH MESSAGE (CORPORATE) ================= */
+
+.flash-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.flash-message {
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 16px;
+  box-shadow: 0 8px 20px rgb(207, 235, 207);
+  animation: slideDown 0.4s ease;
+}
+
+/* Smooth entry */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.nav-link {
+  color: #cfe2ff;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.nav-link.active {
+  background: #ffffff;
+  color: #5ab0d7 !important;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Page background */
+body {
+  background: linear-gradient(to bottom, #e9ecef, #adb5bd);
+  min-height: 100vh;
+}
+
+/* Login card */
+.login-card {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 18px;
+  padding: 30px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+/* Login title */
+.login-card h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.login-card input {
+  background: #5a5a5a;
+  border: none;
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.login-card input::placeholder {
+  color: #cfcfcf;
+}
+
+.login-card input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #5384ce;
+}
+
+/* Login button */
+.login-card .btn-primary {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("/static/images/notes.jpg");
+  background-size: cover;        /* fill screen */
+  background-position: center;   /* center image */
+  background-repeat: no-repeat;  /* no tiling */
+  background-attachment: fixed;  /* nice parallax effect */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+
+
+Css /* SEARCH BAR */
+.search-bar{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-right:15px;
+}
+
+.search-bar input{
+    padding:7px 12px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    font-size:13px;
+}
+
+.search-bar button{
+    padding:7px 10px;
+    border:none;
+    border-radius:8px;
+    background:#d9e7e9;
+    color:white;
+    cursor:pointer;
+}
+
+.search-bar button:hover{
+    background:#3c9df2;
+}
+
+
+
+
+.note-card {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 16px;
+    padding: 20px;
+    width: 320px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+
+
+
