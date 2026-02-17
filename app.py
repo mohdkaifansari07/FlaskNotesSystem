@@ -30,7 +30,9 @@ serializer = URLSafeTimedSerializer(app.secret_key)
 # --------------------
 # SQLite DB Config
 # --------------------
-DATABASE = 'notes.db'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "notes.db")
+
 def init_db():
     conn = sqlite3.connect(DATABASE)
     with open('schema.sql') as f:
