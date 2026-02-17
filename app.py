@@ -324,6 +324,7 @@ def reset_password(token):
 
 
 # ---------------- SEARCH NOTES ----------------
+# ---------------- SEARCH NOTES ----------------
 @app.route('/search', methods=['GET'])
 def search():
     if 'user_id' not in session:
