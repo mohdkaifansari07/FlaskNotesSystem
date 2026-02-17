@@ -31,6 +31,16 @@ serializer = URLSafeTimedSerializer(app.secret_key)
 # SQLite DB Config
 # --------------------
 DATABASE = 'notes.db'
+def init_db():
+    conn = sqlite3.connect(DATABASE)
+    with open('schema.sql') as f:
+        conn.executescript(f.read())
+    conn.close()
+
+# Auto create DB if not exists (Railway fix)
+if not os.path.exists(DATABASE):
+    init_db()
+
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
@@ -365,3 +375,5 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render will set PORT
     debug_mode = os.environ.get("FLASK_DEBUG", "False") == "True"
     app.run(host="0.0.0.0", port=port, debug=debug_mode)
+
+
